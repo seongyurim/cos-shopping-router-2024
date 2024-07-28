@@ -42,7 +42,8 @@ const Detail = () => {
       <Container className="detail-container">
         <Row className="detail-wrapper">
           <Col className="img-area">
-            <img src={product?.img} className="detail-img"/>
+            <img src={product?.img_d} className="detail-img"/>
+            <img src={product?.img_m} className="detail-img"/>
           </Col>
           <Col className="info-area">
             <div className="card-tag">
