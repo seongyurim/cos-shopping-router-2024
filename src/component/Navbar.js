@@ -13,7 +13,8 @@ const Navbar = ({authenticate, setAuthenticate}) => {
     "아이콘 코트",
     "아뜰리에",
     "패션소품",
-    "선물 제안"
+    "선물 제안",
+    "에기사랑해"
   ];
 
   const [width, setWidth] = useState(0);
