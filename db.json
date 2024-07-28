@@ -2,7 +2,7 @@
   "products": [
       {
           "id": 0,
-          "img": "https://noona-hnm.netlify.app/pattern-jacket.jpeg",
+          "img": "https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/00-d.jpg?raw=true",
           "title": "크롭 울 가디건",
           "price": 150000,
           "best": true,
@@ -14,7 +14,7 @@
       },
       {
           "id":1,
-          "img":"https://noona-hnm.netlify.app/ankle-jeans.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/01-d.jpg?raw=true",
           "title":"오버사이즈 커브드 헴 셔츠",
           "price":150000,
           "best":true,
@@ -25,7 +25,7 @@
       },
       {
           "id":2,
-          "img":"https://noona-hnm.netlify.app/wide-jeans.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/02-d.jpg?raw=true",
           "title":"TIDE 트라우저 - 와이드",
           "price":150000,
           "best":false,
@@ -36,7 +36,7 @@
       },
       {
           "id":3,
-          "img":"https://noona-hnm.netlify.app/cottom-dress.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/03-d.jpg?raw=true",
           "title":"쇼트 슬리브 집업 폴로 셔츠",
           "price":105000,
           "best":false,
@@ -47,7 +47,7 @@
       },
       {
           "id":4,
-          "img":"https://noona-hnm.netlify.app/shirt-dress.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/04-d.jpg?raw=true",
           "title":"스웨이드 데저트 슈즈",
           "price":290000,
           "best":true,
@@ -58,7 +58,7 @@
       },
       {
           "id":5,
-          "img":"https://noona-hnm.netlify.app/flare-dress.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/05-d.jpg?raw=true",
           "title":"오픈 백 티어드 미디 드레스",
           "price":175000,
           "best":false,
@@ -69,7 +69,7 @@
       },
       {
           "id":6,
-          "img":"https://noona-hnm.netlify.app/single-jacket.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/06-d.jpg?raw=true",
           "title":"쇼트 슬리브 리브드 니트 가디건",
           "price":115000,
           "best":true,
@@ -80,7 +80,7 @@
       },
       {
           "id":7,
-          "img":"https://noona-hnm.netlify.app/oversize-hoodie.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/07-d.jpg?raw=true",
           "title":"미니 CAVATELLI 클러치백 - 레더",
           "price":175000,
           "best":false,
@@ -91,7 +91,7 @@
       },
       {
           "id":8,
-          "img":"https://noona-hnm.netlify.app/track-jacket.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/08-d.jpg?raw=true",
           "title":"오버사이즈 퀼티드 크로스바디 백",
           "price":150000,
           "best":true,
@@ -102,7 +102,7 @@
       },
       {
           "id":9,
-          "img":"https://noona-hnm.netlify.app/design-hoodie.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/09-d.jpg?raw=true",
           "title":"와이드 레그 엘라스틱 트라우저",
           "price":135000,
           "best":false,
@@ -113,7 +113,7 @@
       },
       {
           "id":10,
-          "img": "https://noona-hnm.netlify.app/regular-wide-jeans.jpeg",
+          "img": "https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/10-d.jpg?raw=true",
           "title": "프린티드 플레어 맥시 스커트",
           "price": 175000,
           "best": true,
@@ -124,7 +124,7 @@
       },
       {
           "id":11,
-          "img":"https://noona-hnm.netlify.app/high-jeans.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/11-d.jpg?raw=true",
           "title":"패널 데님 맥시 스커트",
           "price":175000,
           "best":true,
@@ -135,7 +135,7 @@
       },
       {
           "id":12,
-          "img":"https://noona-hnm.netlify.app/mash-dress.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/12-d.jpg?raw=true",
           "title":"리넨 리조트 셔츠",
           "price":115000,
           "best":true,
@@ -146,7 +146,7 @@
       },
       {
           "id":13,
-          "img":"https://noona-hnm.netlify.app/sweat-shirt.jpeg",
+          "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/13-d.jpg?raw=true",
           "title":"퍼널넥 유틸리티 재킷",
           "price":190000,
           "best":false,
@@ -157,7 +157,7 @@
       },
       {
         "id":14,
-        "img":"https://noona-hnm.netlify.app/sweat-shirt.jpeg",
+        "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/14-d.jpg?raw=true",
         "title":"레더 트리밍 메쉬 발레 플랫슈즈",
         "price":190000,
         "best":false,
@@ -168,7 +168,7 @@
     },
     {
         "id":15,
-        "img":"https://noona-hnm.netlify.app/sweat-shirt.jpeg",
+        "img":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/15-d.jpg?raw=true",
         "title":"커브드 헴 쇼트 슬리브 데님 셔츠",
         "price":150000,
         "best":false,

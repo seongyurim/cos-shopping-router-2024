@@ -360,7 +360,12 @@ button {
 }
 
 .img-area {
-  display: flex;
+  max-width: 100%;
+  display: block;
+}
+
+.detail-img {
+  width: 100%;
 }
 
 .info-area {

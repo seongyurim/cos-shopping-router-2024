@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import Form from 'react-bootstrap/Form'; 
 
 const Detail = () => {
 
@@ -43,7 +42,7 @@ const Detail = () => {
       <Container className="detail-container">
         <Row className="detail-wrapper">
           <Col className="img-area">
-            <img src={product?.img} />
+            <img src={product?.img} className="detail-img"/>
           </Col>
           <Col className="info-area">
             <div className="card-tag">

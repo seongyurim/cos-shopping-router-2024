@@ -8,13 +8,14 @@ import { useNavigate, Link } from 'react-router-dom';
 const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = [
     "신상품",
-    "의류",
-    "아우터웨어",
-    "아이콘 코트",
-    "아뜰리에",
-    "패션소품",
-    "선물 제안",
-    "에기사랑해"
+    "베스트",
+    "S/S 데님 컬렉션",
+    "여성",
+    "남성",
+    "탑/재킷",
+    "트라우저",
+    "백",
+    "슈즈"
   ];
 
   const [width, setWidth] = useState(0);
