@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cos-shopping-router-2024/static/css/main.a0a620f0.css",
-    "main.js": "/cos-shopping-router-2024/static/js/main.78eae6b2.js",
+    "main.js": "/cos-shopping-router-2024/static/js/main.c66d03f5.js",
     "static/js/453.42ebe50d.chunk.js": "/cos-shopping-router-2024/static/js/453.42ebe50d.chunk.js",
     "index.html": "/cos-shopping-router-2024/index.html",
     "main.a0a620f0.css.map": "/cos-shopping-router-2024/static/css/main.a0a620f0.css.map",
-    "main.78eae6b2.js.map": "/cos-shopping-router-2024/static/js/main.78eae6b2.js.map",
+    "main.c66d03f5.js.map": "/cos-shopping-router-2024/static/js/main.c66d03f5.js.map",
     "453.42ebe50d.chunk.js.map": "/cos-shopping-router-2024/static/js/453.42ebe50d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0a620f0.css",
-    "static/js/main.78eae6b2.js"
+    "static/js/main.c66d03f5.js"
   ]
 }
