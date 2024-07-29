@@ -39,7 +39,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
       // 1. 사용자가 입력한 검색어를 읽어온다.
       let keyword = event.target.value;
       // 2. url을 바꿔준다.
-      navigate(`/?q=${keyword}`);
+      navigate(`?q=${keyword}`);
       // 3. 검색을 마쳤으니 input 상자에서 키워드를 삭제한다.
       setSearchKeyword("");
     }
@@ -56,7 +56,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
 
   const getCategory = (event) => {
     let keyword = event.target.textContent;
-    navigate(`/?category=${keyword}`);
+    navigate(`?category=${keyword}`);
   }
 
   useEffect(() => {
