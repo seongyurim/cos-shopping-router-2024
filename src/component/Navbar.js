@@ -8,16 +8,19 @@ import { useNavigate, Link } from 'react-router-dom';
 const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = [
     "신상품",
-    "의류",
-    "아우터웨어",
-    "아이콘 코트",
-    "아뜰리에",
-    "패션소품",
-    "선물 제안"
+    "베스트",
+    "S/S 데님 컬렉션",
+    "여성",
+    "남성",
+    "탑/재킷",
+    "트라우저",
+    "백",
+    "슈즈"
   ];
 
   const [width, setWidth] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState("");
   const navigate = useNavigate();
 
   const goToLogin = () => {
@@ -37,6 +40,8 @@ const Navbar = ({authenticate, setAuthenticate}) => {
       let keyword = event.target.value;
       // 2. url을 바꿔준다.
       navigate(`/?q=${keyword}`);
+      // 3. 검색을 마쳤으니 input 상자에서 키워드를 삭제한다.
+      setSearchKeyword("");
     }
   }
 
@@ -47,6 +52,11 @@ const Navbar = ({authenticate, setAuthenticate}) => {
     else {
       setIsScrolled(false);
     }
+  }
+
+  const getCategory = (event) => {
+    let keyword = event.target.textContent;
+    navigate(`/?category=${keyword}`);
   }
 
   useEffect(() => {
@@ -77,11 +87,11 @@ const Navbar = ({authenticate, setAuthenticate}) => {
           <div className="burger-menu">
             <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
           </div>
-          <ul className="menu-list">{menuList.map(menu => <li>{menu}</li>)}</ul>
+          <ul className="menu-list">{menuList.map(menu => <li onClick={(event) => getCategory(event)}>{menu}</li>)}</ul>
           <div className="navi-btm-right">
             <div className="search-bar">
               <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
-              <input type="text" className="navi-search" placeholder="제품 탐색" onKeyDown={(event) => search(event)}/>
+              <input type="text" className="navi-search" placeholder="제품 탐색" value={searchKeyword} onChange={(event) => setSearchKeyword(event.target.value)} onKeyDown={(event) => search(event)} />
             </div>
             <div className="login-box" onClick={goToLogin}>
               <FontAwesomeIcon icon={faUser} className="login-icon"/>

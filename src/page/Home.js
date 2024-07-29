@@ -35,7 +35,7 @@ const Home = () => {
     }
   }
 
-  // API 호출
+  // API 호출(검색)
   const getProducts = async() => {
     let searchQuery = query.get('q') || "";
     let categoryQuery = query.get('category') || "";

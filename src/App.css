@@ -257,6 +257,14 @@ button {
   max-width: 100%;
 }
 
+.card-image.img-hide {
+  display: none;
+}
+
+.card-image.img-show {
+  display: block;
+}
+
 .card-new-show,
 .card-best-show {
   border: 1px solid #000;
@@ -364,7 +372,13 @@ button {
 }
 
 .img-area {
-  display: flex;
+  max-width: 100%;
+  display: block;
+}
+
+.detail-img {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .info-area {
