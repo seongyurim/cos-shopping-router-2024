@@ -14,7 +14,7 @@ const Detail = () => {
   const isAddToCartEnabled = selectedSize != null && selectedColor != null;
 
   const getProductDetail = async() => {
-    let url = `http://localhost:4000/products/${id}`;
+    let url = `https://my-json-server.typicode.com/seongyurim/cos-shopping-router-2024/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     // console.log("data: " + data);
@@ -42,10 +42,11 @@ const Detail = () => {
     <div>
       <Container className="detail-container">
         <Row className="detail-wrapper">
-          <Col className="img-area">
-            <img src={product?.img} />
+          <Col xs={12} md={12} lg={7} className="img-area">
+            <img src={product?.img_d} className="detail-img"/>
+            <img src={product?.img_m} className="detail-img"/>
           </Col>
-          <Col className="info-area">
+          <Col xs={12} md={12} lg={5} className="info-area">
             <div className="card-tag">
               <div className={`font-sm ${product?.new == true ? "card-new-show" : "card-hidden"}`}>
                 {product?.new == true ? "NEW" : ""}
@@ -99,6 +100,10 @@ const Detail = () => {
                   </>
                     ) : ("컬러와 사이즈를 선택해 주세요")}
             </button>
+            <div className="card-delivery">
+            모든 상품은 무료배송이며 CJ대한통운을 통해 배송됩니다.<br/>
+            배송은 영업일 기준 3~5일 소요됩니다. (주말, 공휴일 제외)
+            </div>
           </Col>
         </Row>
       </Container>

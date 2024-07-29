@@ -151,9 +151,88 @@
           "price":29900,
           "best":false,
           "new":false,
-          "color":["BLACK", "GRAY"],
-          "size":["S","M","L"],
-          "desc":"오버사이즈 실루엣으로 모던한 무드를 더한 셔츠입니다. 이중으로 마감된 코튼 피케 원단으로 만들어졌으며, 섬세하면서도 여유로운 핏과 대조적인 느낌의 캠프 칼라 디테일이 특징입니다."
-      }
+          "gender": false,
+          "color":["네이비", "그린"],
+          "size":["XS", "S","M","L", "XL"],
+          "desc":"워크웨어 무드를 더한 모던한 감각의 해링턴 재킷입니다. 코튼 크레이프 원단으로 만들어졌으며, 퍼널넥과 웰트 포켓, 그리고 신축성 있게 마감된 가장자리로 편안한 실루엣을 완성했습니다. 셔츠 또는 티셔츠를 함께 겹쳐 입어보세요."
+      },
+      {
+        "id":14,
+        "img_d":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/14-d.jpg?raw=true",
+        "img_m":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/14-m.jpg?raw=true",
+        "title":"레더 트리밍 메쉬 발레 플랫슈즈",
+        "price":190000,
+        "best":false,
+        "new":false,
+        "gender": true,
+        "color":["화이트", "블랙"],
+        "size":["36", "37", "38", "39", "40", "41"],
+        "desc":"이번 시즌, 실루엣이 은은하게 비치는 쉬어 디자인의 아이템으로 특별함을 더해 보세요. 메쉬 디테일로 완성된 발레 플랫으로, 가죽 소재로 마감된 가장자리와 탈부착 가능한 우아한 감각의 타이 끈 디테일이 특징입니다."
+    },
+    {
+        "id":15,
+        "img_d":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/15-d.jpg?raw=true",
+        "img_m":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/15-m.jpg?raw=true",
+        "title":"커브드 헴 쇼트 슬리브 데님 셔츠",
+        "price":150000,
+        "best":false,
+        "new":false,
+        "gender": true,
+        "color":["미디엄 블루", "다크 블루"],
+        "size":["32", "34", "36", "38", "40", "42"],
+        "desc":"이번 시즌, 새로운 시선으로 재해석된 데님 아이템을 선보입니다. 곡선형 밑단과 박스 플리츠로 특별함을 더한 데님 셔츠로, 유틸리티 감각의 패치 포켓과 포인티드 칼라를 더해 섬세하게 완성되었습니다. 진과 함께 매치하여 더 인상적인 룩을 연출해보세요."
+    },
+    {
+        "id":16,
+        "img_d":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/16-d.jpg?raw=true",
+        "img_m":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/16-m.jpg?raw=true",
+        "title":"벨티드 플리티드 와이드 레그 트라우저",
+        "price":175000,
+        "best":true,
+        "new":false,
+        "gender": false,
+        "color":["베이지", "다크 네이비"],
+        "size":["44", "46", "80", "50", "52", "54"],
+        "desc":"통기성이 좋은 코튼 소재로 만들어진 와이드 레그 트라우저입니다. 여유로운 실루엣으로 이루어져 있으며, 깔끔한 플리츠 주름과 테일러드 무드를 담은 웰트 포켓, 그리고 탈부착 가능한 벨트가 특징입니다."
+    },
+    {
+        "id":17,
+        "img_d":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/17-d.jpg?raw=true",
+        "img_m":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/17-m.jpg?raw=true",
+        "title":"퀼티드 드로우스트링 백팩 - 나일론",
+        "price":150000,
+        "best":false,
+        "new":true,
+        "gender": false,
+        "color":["블랙", "차콜"],
+        "size":["M", "L"],
+        "desc":"리사이클 나일론 소재로 만들어진 퀼티드 백팩입니다. 일상 소지품을 보관하기에 이상적인 넉넉한 수납 공간이 특징으로, 슬링백 디자인과 지퍼 포켓, 그리고 조절 가능한 스트랩이 특징입니다."
+    },
+    {
+        "id":18,
+        "img_d":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/18-d.jpg?raw=true",
+        "img_m":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/18-m.jpg?raw=true",
+        "title":"스트라이프 에이라인 미디 드레스",
+        "price":185000,
+        "best":false,
+        "new":false,
+        "gender": true,
+        "color":["블루", "다크 네이비"],
+        "size":["32", "34", "36", "38", "40", "42"],
+        "desc":"모던한 룩을 완성하는 감각적인 디자인의 드레스입니다. 가벼운 느낌의 오가닉 코튼 소재로 만들어졌으며, 촘촘한 스트라이프 패턴으로 이루어져 있습니다. 형태감을 더하는 가슴 부분의 다트 주름부터 플리츠 스커트까지, 세심하게 신경 쓴 디테일을 확인해보세요."
+    },
+    {
+        "id":19,
+        "img_d":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/19-d.jpg?raw=true",
+        "img_m":"https://github.com/seongyurim/assets/blob/main/cos-shopping-router-2024/products/19-m.jpg?raw=true",
+        "title":"니티드 울 폴로 셔츠",
+        "price":145000,
+        "best":true,
+        "new":false,
+        "gender": false,
+        "color":["그레이", "블랙"],
+        "size":["XS", "S", "M", "L", "XL"],
+        "desc":"부드러운 느낌의 RWS 인증 울 소재로 만들어진 폴로 셔츠입니다. 편안하고 여유로운 실루엣으로 이루어져 있으며, 가슴 부분의 패치 포켓과 하프 플래킷, 그리고 골지 마감된 가장자리고 형태감 있는 실루엣을 완성했습니다."
+    }
   ]
 }

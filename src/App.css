@@ -15,6 +15,10 @@ dl, ol, ul {
   margin: 0 !important;
 }
 
+li {
+  list-style: none;
+}
+
 a:link {
   text-decoration: none;
 }
@@ -277,11 +281,11 @@ button {
 }
 
 .card-info {
-  margin-top: 0.7rem;
+  margin-top: 1rem;
 }
 
 .card-info > div:nth-of-type(1) {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 
@@ -430,8 +434,80 @@ button {
   margin-left: 3px;
 }
 
-.card-desc {
+.card-desc,
+.card-delivery {
   word-break: keep-all;
-  line-height: 1.2rem;
+  line-height: 1.4rem;
   margin-bottom: 40px;
+}
+
+.card-delivery {
+  margin-top: 40px;
+}
+
+
+
+/********** Footer **********/
+
+.footer-container {
+  background-color: #f8f8f8;
+  margin-top: 6rem;
+  padding: 3rem;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+}
+
+.footer-wrapper {
+  margin: 20px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-wrapper ol {
+  padding-left: 0;
+}
+
+.my-info {
+  flex-grow: 2;
+}
+
+.footer-sections li {
+  margin: 10px 0;
+  cursor: default;
+}
+
+.footer-list li:hover {
+  color:rgb(170, 170, 170);
+}
+
+.footer-logo {
+  width: 6rem;
+}
+
+.my-info li span {
+  position: relative;
+}
+
+.my-info li span+span {
+  padding-left: 14px;
+}
+
+.my-info li span+span::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 1px;
+  height: 13px;
+  border-radius: .5px;
+  background-color: #dadada;
+}
+
+.my-info-link:hover {
+  color:rgb(170, 170, 170);
+}
+
+.footer-desc {
+  color:rgb(175, 175, 175);
 }
