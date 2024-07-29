@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
-      <Routes>
+      <Routes basename={process.env.REACT_APP_PUBLIC_URL}>
         <Route
           path="/"
           element={<Home />} />
