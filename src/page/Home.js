@@ -39,7 +39,7 @@ const Home = () => {
   const getProducts = async() => {
     let searchQuery = query.get('q') || "";
     let categoryQuery = query.get('category') || "";
-    let url = `https://my-json-server.typicode.com/seongyurim/cos-shopping-router-2024/products/?q=${searchQuery}&category=${categoryQuery}`;
+    let url = `https://my-json-server.typicode.com/seongyurim/cos-shopping-router-2024/products?q=${searchQuery}&category=${categoryQuery}`;
     let response = await fetch(url);
     let data = await response.json();
 
