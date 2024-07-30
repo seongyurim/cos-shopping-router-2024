@@ -57,6 +57,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
   const getCategory = (event) => {
     let keyword = event.target.textContent;
     navigate(`?category=${keyword}`);
+    setWidth(0);
   }
 
   useEffect(() => {
@@ -74,7 +75,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
           onClick={() => setWidth(0)}></div>
         <div className="side-menu" style={{width: width}}>
           <button className='side-close' onClick={() => setWidth(0)}>&times;</button>
-          <div className="side-menu-list">{menuList.map(menu => <div>{menu}</div>)}</div>
+          <div className="side-menu-list">{menuList.map(menu => <div onClick={(event) => getCategory(event)}>{menu}</div>)}</div>
         </div>
 
         <div className="navi-top">

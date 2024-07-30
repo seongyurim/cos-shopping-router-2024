@@ -6,6 +6,7 @@ import Home from './page/Home';
 import Login from './page/Login';
 import Navbar from './component/Navbar';
 import PrivateRoute from './route/PrivateRoute';
+import ScrollToTopButton from './component/ScrollToTopButton';
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
@@ -28,6 +29,7 @@ function App() {
           path="/product/:id"
           element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>
+      <ScrollToTopButton />
     </div>
   );
 }

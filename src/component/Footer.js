@@ -18,7 +18,7 @@ const Footer = () => {
     "고객 문의"
   ];
 
-  // 배열 분할
+  // 배열 1/2 분할
   const halfwayIndex = Math.ceil(footerList.length / 2);
   const firstHalf = footerList.slice(0, halfwayIndex);
   const secondHalf = footerList.slice(halfwayIndex);
@@ -61,9 +61,10 @@ const Footer = () => {
                 <a href="https://garrypeggyngowan.tistory.com/" target="_blank" className="my-info-link">garrypeggyngowan.tistory.com</a>
               </span>
             </li>
-            <li className="footer-desc">
-              이 페이지는 개인 포트폴리오용으로 제작되었습니다.
-            </li>
+          </Col>
+          <Col xs={12} md={6} lg={2} className="footer-sections my-info">
+            <div className="footer-desc">이 페이지는 개인 포트폴리오용으로 제작되었습니다.</div>
+            <div></div>
           </Col>
         </Row>
       </Container>

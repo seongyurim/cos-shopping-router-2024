@@ -3,12 +3,14 @@ import { Container, Row, Col, Alert } from "react-bootstrap";
 import ProductCard from '../component/ProductCard';
 import { useSearchParams } from 'react-router-dom';
 import Footer from '../component/Footer';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Home = () => {
 
   const [productList, setProductList] = useState([]);
   const [query, setQuery] = useSearchParams();
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const filterProducts = (data, category) => {
     switch (category) {
@@ -42,6 +44,7 @@ const Home = () => {
       let searchQuery = query.get('q') || "";
       let categoryQuery = query.get('category') || "";
       let url = `https://my-json-server.typicode.com/seongyurim/cos-shopping-router-2024/products?q=${searchQuery}&category=${categoryQuery}`;
+      setLoading(true);
       let response = await fetch(url);
       let data = await response.json();
 
@@ -61,6 +64,7 @@ const Home = () => {
         }
       }
       setProductList(data);
+      setLoading(false);
     }
     catch (err) {
       setError(err.message);
@@ -73,21 +77,30 @@ const Home = () => {
 
   return (
     <div>
-      <Container className="home-container">
-        {error ? (
-          <Alert variant="danger" className="error-msg">{error}</Alert>
-        ) : (
-        <Row>
-          {productList.length > 0 &&
-           productList.map((item) => (
-            <Col xs={12} md={6} lg={4}>
-              <ProductCard item={item}/>
-            </Col>
-          ))}
-        </Row>
-        )}
-      </Container>
-      <Footer />      
+      {loading ? (
+        <Container className="home-container loading-spinner-area">
+          <ClipLoader color="#888" loading={loading} size={50} className="loading-spinner"/>
+          <div className="loading-spinner-txt">조금만 기다려주세요</div>
+        </Container>
+      ) : (
+        <div>
+          <Container className="home-container">
+            {error ? (
+              <Alert variant="danger" className="error-msg">{error}</Alert>
+            ) : (
+            <Row>
+              {productList.length > 0 &&
+              productList.map((item) => (
+                <Col xs={12} md={6} lg={4}>
+                  <ProductCard item={item}/>
+                </Col>
+              ))}
+            </Row>
+            )}
+          </Container>
+          <Footer />
+        </div>   
+      )}
     </div>
   );
 };
