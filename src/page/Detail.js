@@ -97,7 +97,7 @@ const Detail = () => {
                     장바구니에 담기
                     <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
                   </>
-                    ) : ("컬러와 사이즈를 선택해 주세요")}
+                    ) : ("색상과 사이즈를 선택해 주세요")}
             </button>
             <div className="card-delivery">
             모든 상품은 무료배송이며 CJ대한통운을 통해 배송됩니다.<br/>

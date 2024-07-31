@@ -9,11 +9,12 @@ const Navbar = ({authenticate, setAuthenticate}) => {
   const menuList = [
     "신상품",
     "베스트",
-    "S/S 데님 컬렉션",
+    "데님 컬렉션",
     "여성",
     "남성",
     "탑/재킷",
     "트라우저",
+    "스커트",
     "백",
     "슈즈"
   ];
@@ -99,7 +100,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
           <div className="navi-btm-right">
             <div className="search-bar">
               <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
-              <input type="text" className="navi-search" placeholder="제품 탐색" value={searchKeyword} onChange={(event) => setSearchKeyword(event.target.value)} onKeyDown={(event) => search(event)} />
+              <input type="text" className="navi-search" placeholder="제품 검색" value={searchKeyword} onChange={(event) => setSearchKeyword(event.target.value)} onKeyDown={(event) => search(event)} />
             </div>
             <div className="login-box" onClick={goToLogin}>
               <FontAwesomeIcon icon={faUser} className="login-icon"/>

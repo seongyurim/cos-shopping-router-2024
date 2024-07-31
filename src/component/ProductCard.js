@@ -35,6 +35,8 @@ const ProductCard = ({item}) => {
       <div className="card-info">
         <div>{item?.title}</div>
         <div>{`${addCommasToNumber(item?.price)}`}</div>
+        <div className="card-info-detail">{item?.color.length}색상</div>
+        <div className="card-info-detail">{item?.size.length}사이즈</div>
       </div>
     </div>
   );

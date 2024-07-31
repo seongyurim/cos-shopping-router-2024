@@ -4,6 +4,7 @@ import ProductCard from '../component/ProductCard';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import Footer from '../component/Footer';
 import ClipLoader from "react-spinners/ClipLoader";
+import Promotion from '../component/Promotion';
 
 const Home = () => {
 
@@ -15,11 +16,17 @@ const Home = () => {
 
   const filterProducts = (data, category) => {
     switch (category) {
+      case "여성 신상품":
+        return data.filter(product => product.gender == true &&
+                                      product.new == true);
+      case "남성 신상품":
+        return data.filter(product => product.gender == false &&
+                                      product.new == true);
       case "신상품":
         return data.filter(product => product.new === true);
       case "베스트":
         return data.filter(product => product.best === true);
-      case "S/S 데님 컬렉션":
+      case "데님 컬렉션":
         return data.filter(product => product.title.includes("데님"));
       case "여성":
         return data.filter(product => product.gender === true);
@@ -27,9 +34,13 @@ const Home = () => {
         return data.filter(product => product.gender === false);
       case "탑/재킷":
         return data.filter(product => product.title.includes("재킷") ||
+                                      product.title.includes("가디건") ||
                                       product.desc.includes("셔츠"));
       case "트라우저":
         return data.filter(product => product.title.includes("트라우저"));
+      case "스커트":
+        return data.filter(product => product.title.includes("스커트") ||
+                                      product.title.includes("드레스"));
       case "백":
         return data.filter(product => product.title.includes("백"));
       case "슈즈":
@@ -76,12 +87,14 @@ const Home = () => {
     getProducts();
   }, [query]);
 
+  const hasCategoryQuery = query.get('category') != null;
+
   return (
     <div>
       {loading ? (
         <Container className="home-container loading-spinner-area">
           <ClipLoader color="#888" loading={loading} size={50} className="loading-spinner"/>
-          <div className="loading-spinner-txt">조금만 기다려주세요</div>
+          <div className="loading-spinner-txt">잠시만 기다려주세요</div>
         </Container>
       ) : (
         <div>
@@ -89,14 +102,23 @@ const Home = () => {
             {error ? (
               <Alert variant="danger" className="error-msg">{error}</Alert>
             ) : (
-            <Row>
-              {productList.length > 0 &&
-              productList.map((item) => (
-                <Col xs={12} md={6} lg={4}>
-                  <ProductCard item={item}/>
-                </Col>
-              ))}
-            </Row>
+              <div>
+                {!hasCategoryQuery && (
+                  <div>
+                    <Row><Promotion /></Row>
+                    <Row className="home-intro">지금 바로 COS의 고유한 컬렉션을 탐험해보세요</Row>
+                  </div>
+                )}
+                <Row>
+                  {productList.length > 0 &&
+                  productList.map((item) => (
+                    <Col xs={12} md={6} lg={4}>
+                      <ProductCard item={item}/>
+                    </Col>
+                  ))}
+                </Row>
+
+              </div>
             )}
           </Container>
           <Footer />
