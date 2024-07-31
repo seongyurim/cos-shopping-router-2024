@@ -159,8 +159,17 @@ button {
   z-index: 999999;
 }
 
+.logo-small {
+  width: 50px;
+}
+
+.logo-small-hide {
+  display: none;
+}
+
 .menu-list {
   display: flex;
+  align-items: center;
   list-style-type: none;
   padding-left: 0;
 }
@@ -184,6 +193,12 @@ button {
 
 .menu-list > li:hover::after {
   width: 100%;
+}
+
+.logo-small-area::after {
+  content: none;
+  display: none;
+  transition: none;
 }
 
 .burger-menu {
@@ -259,7 +274,7 @@ button {
 
 .card-tag {
   position: absolute;
-  left: 10px;
+  left: -5px;
   top: 10px;
 }
 
@@ -324,6 +339,14 @@ button {
   border: 1px solid rgb(180, 180, 180);
   padding: 2rem 3rem;
   margin: 4rem;
+}
+
+@media (max-width: 576px) {
+  .login-wrapper {
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+  }
 }
 
 .login-title {
@@ -480,7 +503,7 @@ button {
 .footer-container {
   background-color: #f8f8f8;
   margin-top: 6rem;
-  padding: 3rem;
+  padding: 3rem 0;
   font-size: 0.8rem;
   line-height: 1.1rem;
 }
@@ -496,10 +519,6 @@ button {
   padding-left: 0;
 }
 
-.my-info {
-  /* flex-grow: 2; */
-}
-
 .footer-sections li {
   margin: 10px 0;
   cursor: default;
@@ -507,6 +526,10 @@ button {
 
 .footer-list li:hover {
   color:rgb(170, 170, 170);
+}
+
+.footer-logo-area {
+  flex: 0 0 17%;
 }
 
 .footer-logo {
@@ -532,12 +555,24 @@ button {
   background-color: #dadada;
 }
 
-.my-info-link:hover {
-  color:rgb(170, 170, 170);
+.footer-list {
+  display: flex;
 }
 
-.footer-desc {
-  color:rgb(175, 175, 175);
+.footer-list > :first-child {
+  margin-right: 3rem;
+}
+
+.my-info-link:hover {
+  color:rgb(179, 179, 179);
+}
+
+.my-info-desc {
+  margin: 10px 0;
+  flex-grow: 1;
+  color:rgb(165, 165, 165);
+  line-height: 1.5rem;
+  cursor: default;
 }
 
 
@@ -548,7 +583,7 @@ button {
   width: 55px;
   height: 55px;
   border: 1px solid #000;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
   position: fixed;
   right: 3rem;
   bottom: 3rem;
@@ -577,5 +612,5 @@ button {
 }
 
 .scroll-area:hover {
-  background-color: rgba(224, 224, 224, 0.8);
+  background-color: rgba(207, 207, 207, 0.6);
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import ProductCard from '../component/ProductCard';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Footer from '../component/Footer';
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -11,6 +11,7 @@ const Home = () => {
   const [query, setQuery] = useSearchParams();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const filterProducts = (data, category) => {
     switch (category) {
@@ -57,7 +58,7 @@ const Home = () => {
 
       if (data.length < 1) {
         if (searchQuery != "") {
-          setError(`${searchQuery}와 일치하는 상품이 없습니다.`);
+          setError(`${searchQuery}(와)과 일치하는 상품이 없습니다.`);
         }
         else {
           throw new Error("결과가 없습니다.");

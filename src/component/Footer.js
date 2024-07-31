@@ -27,19 +27,17 @@ const Footer = () => {
     <footer className="footer-container">
       <Container>
         <Row>
-          <Col xs={12} md={6} lg={2} className="footer-sections">
+          <Col xs={12} md={4} lg={3} className="footer-sections footer-logo-area">
             <img className="footer-logo" src="https://cdn.freelogovectors.net/wp-content/uploads/2023/12/cos-logo-freelogovectors.net_.png" alt="COS Logo"/>
           </Col>
-          <Col xs={12} md={6} lg={2} className="footer-sections">
-            {firstHalf.map(item => <li>{item}</li>)}
+          <Col xs={12} md={4} lg={3} className="footer-sections footer-list">
+            <div>{firstHalf.map(item => <li>{item}</li>)}</div>
+            <div>{secondHalf.map(item => <li>{item}</li>)}</div>
           </Col>
-          <Col xs={12} md={6} lg={2} className="footer-sections">
-            {secondHalf.map(item => <li>{item}</li>)}
-          </Col>
-          <Col xs={12} md={6} lg={2} className="footer-sections my-info">
+          <Col xs={12} md={4} lg={3} className="footer-sections my-info">
             <li>
               <span className="my-info-sub">Developed</span>
-              <span className="my-info-con">seongyurim</span>
+              <span className="my-info-con">성유림</span>
             </li>
             <li>
               <span className="my-info-sub">Contact</span>
@@ -62,9 +60,10 @@ const Footer = () => {
               </span>
             </li>
           </Col>
-          <Col xs={12} md={6} lg={2} className="footer-sections my-info">
-            <div className="footer-desc">이 페이지는 개인 포트폴리오용으로 제작되었습니다.</div>
-            <div></div>
+          <Col xs={12} md={4} lg={3} className="footer-sections my-info my-info-desc">
+            <div>이 페이지는 개인 포트폴리오용으로 제작되었습니다.</div>
+            <div>This page was created as a personal portfolio and is not intended for commercial use.</div>
+            <div>© seongyurim, August 2024</div>
           </Col>
         </Row>
       </Container>

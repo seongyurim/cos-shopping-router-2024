@@ -88,7 +88,14 @@ const Navbar = ({authenticate, setAuthenticate}) => {
           <div className="burger-menu">
             <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
           </div>
-          <ul className="menu-list">{menuList.map(menu => <li onClick={(event) => getCategory(event)}>{menu}</li>)}</ul>
+          <ul className="menu-list">
+            <li className={`logo-small-area ${isScrolled ? "" : "logo-small-hide"}`}>
+              <Link to ="/">
+              <img className="logo-small" src="https://cdn.freelogovectors.net/wp-content/uploads/2023/12/cos-logo-freelogovectors.net_.png" alt="COS Logo" />
+              </Link>
+            </li>
+            {menuList.map(menu => <li onClick={(event) => getCategory(event)}>{menu}</li>)}
+          </ul>
           <div className="navi-btm-right">
             <div className="search-bar">
               <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon"/>
