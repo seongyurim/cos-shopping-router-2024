@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cos-shopping-router-2024/static/css/main.ee50aaa5.css",
-    "main.js": "/cos-shopping-router-2024/static/js/main.3034a2ca.js",
+    "main.css": "/cos-shopping-router-2024/static/css/main.3a87fe7d.css",
+    "main.js": "/cos-shopping-router-2024/static/js/main.8522ca50.js",
     "static/js/453.42ebe50d.chunk.js": "/cos-shopping-router-2024/static/js/453.42ebe50d.chunk.js",
     "index.html": "/cos-shopping-router-2024/index.html",
-    "main.ee50aaa5.css.map": "/cos-shopping-router-2024/static/css/main.ee50aaa5.css.map",
-    "main.3034a2ca.js.map": "/cos-shopping-router-2024/static/js/main.3034a2ca.js.map",
+    "main.3a87fe7d.css.map": "/cos-shopping-router-2024/static/css/main.3a87fe7d.css.map",
+    "main.8522ca50.js.map": "/cos-shopping-router-2024/static/js/main.8522ca50.js.map",
     "453.42ebe50d.chunk.js.map": "/cos-shopping-router-2024/static/js/453.42ebe50d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee50aaa5.css",
-    "static/js/main.3034a2ca.js"
+    "static/css/main.3a87fe7d.css",
+    "static/js/main.8522ca50.js"
   ]
 }
