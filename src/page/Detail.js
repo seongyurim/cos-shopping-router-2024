@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Detail = () => {
 
@@ -42,8 +42,11 @@ const Detail = () => {
       <Container className="detail-container">
         <Row className="detail-wrapper">
           <Col xs={12} md={12} lg={7} className="img-area">
-            <img src={product?.img_d} className="detail-img"/>
-            <img src={product?.img_m} className="detail-img"/>
+            <div className="img-area-inner">
+              <img src={product?.img_d} className="detail-img" />
+              <img src={product?.img_m} className="detail-img "/>
+              <div className="card-like"><FontAwesomeIcon icon={faHeart} size="lg" className="card-like-icon"/></div>
+            </div>
           </Col>
           <Col xs={12} md={12} lg={5} className="info-area">
             <div className="card-tag">

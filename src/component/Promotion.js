@@ -19,23 +19,23 @@ const Promotion = () => {
         <Row>
           <Col xs={12} md={12} lg={6}>
             <div className="promotion-img-area">
+              <div className="promotion-title" onClick={(event) => showPromotion(event)}>여성 신상품</div>
               <img
                 className="promotion-img"
                 src="https://syr-cos.netlify.app/promotion-women.png"
                 alt="Women Promotion"
               />
-              <div className="promotion-title" onClick={(event) => showPromotion(event)}>여성 신상품</div>
               <div className="promotion-overlay"></div>
             </div>
           </Col>
           <Col xs={12} md={12} lg={6}>
             <div className="promotion-img-area">
+              <div className="promotion-title" onClick={(event) => showPromotion(event)}>남성 신상품</div>
               <img
                 className="promotion-img"
                 src="https://syr-cos.netlify.app/promotion-men.png"
                 alt="Men Promotion"
               />
-              <div className="promotion-title" onClick={(event) => showPromotion(event)}>남성 신상품</div>
               <div className="promotion-overlay"></div>
             </div>
           </Col>
