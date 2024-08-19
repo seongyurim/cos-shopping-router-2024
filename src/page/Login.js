@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form'; 
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authenricateAction } from '../redux/actions/authenticateAction';
 
-const Login = ({setAuthenticate}) => {
+const Login = () => {
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
   const loginUser = (event) => {
     event.preventDefault();
-    setAuthenticate(true);
+    dispatch(authenricateAction.login(id, password));
     navigate('/');
   }
 
@@ -21,13 +27,23 @@ const Login = ({setAuthenticate}) => {
             <Form.Label className="login-txt font-sm">
               아이디*
             </Form.Label>
-            <Form.Control type="text" className="login-inputs" placeholder="ID"/>
+            <Form.Control
+              type="text"
+              className="login-inputs"
+              placeholder="ID"
+              onChange={(event) => setId(event.target.value)}
+            />
           </Form.Group>
           <Form.Group>
             <Form.Label className="login-txt font-sm">
               비밀번호*
             </Form.Label>
-            <Form.Control type="password" className="login-inputs" placeholder="Password"/>
+            <Form.Control
+              type="password"
+              className="login-inputs"
+              placeholder="Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
           </Form.Group>
           <Button type="submit" className="login-btn font-sm">
             로그인

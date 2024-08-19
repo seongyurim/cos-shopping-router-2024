@@ -4,8 +4,10 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { authenricateAction } from '../redux/actions/authenticateAction';
 
-const Navbar = ({authenticate, setAuthenticate}) => {
+const Navbar = () => {
   const menuList = [
     "신상품",
     "베스트",
@@ -22,15 +24,17 @@ const Navbar = ({authenticate, setAuthenticate}) => {
   const [width, setWidth] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState("");
+  const { authenticate } = useSelector(state => state.auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToLogin = () => {
     if (!authenticate) {
       navigate('/login');
     }
     else {
+      dispatch(authenricateAction.logout(authenticate));
       alert("로그아웃되었습니다.");
-      setAuthenticate(false);
       navigate('/');      
     }
   }
