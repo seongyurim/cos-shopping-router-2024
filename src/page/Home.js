@@ -6,7 +6,7 @@ import LoadingSpinner from '../component/LoadingSpinner';
 import ProductCard from '../component/ProductCard';
 import Promotion from '../component/Promotion';
 import Footer from '../component/Footer';
-import { productAction } from "../redux/actions/productAction";
+import { fetchProducts } from '../redux/reducers/productSlice';
 
 const Home = () => {
   const { productList, listLoading, listError } = useSelector(state => state.product);
@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     let searchQuery = query.get('q') || "";
     let categoryQuery = query.get('category') || "";
-    dispatch(productAction.getProducts(searchQuery, categoryQuery));
+    dispatch(fetchProducts({ searchQuery, categoryQuery })); // new
   }, [query, dispatch]);
 
   const hasCategoryQuery = query.get('category') != null;
@@ -42,8 +42,8 @@ const Home = () => {
                 )}
                 <Row>
                   {productList.length > 0 &&
-                  productList.map((item) => (
-                    <Col xs={12} md={6} lg={4}>
+                  productList.map(item => (
+                    <Col xs={12} md={6} lg={4} key={item.id}>
                       <ProductCard item={item}/>
                     </Col>
                   ))}

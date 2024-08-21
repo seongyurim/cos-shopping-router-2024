@@ -3,9 +3,9 @@ import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons';
-import { productAction } from '../redux/actions/productAction';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadingSpinner from '../component/LoadingSpinner';
+import { fetchSingleProduct } from '../redux/reducers/productSlice';
 
 const Detail = () => {
 
@@ -17,7 +17,8 @@ const Detail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(productAction.getProductDetail(id));
+    // dispatch(productAction.getProductDetail(id)); // old
+    dispatch(fetchSingleProduct(id)); // new
   }, [id, dispatch]);
 
   const handleColorClick = (idx) => {

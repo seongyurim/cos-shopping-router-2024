@@ -31,8 +31,8 @@ const Footer = () => {
             <img className="footer-logo" src="https://cdn.freelogovectors.net/wp-content/uploads/2023/12/cos-logo-freelogovectors.net_.png" alt="COS Logo"/>
           </Col>
           <Col xs={12} md={4} lg={3} className="footer-sections footer-list">
-            <div>{firstHalf.map(item => <li>{item}</li>)}</div>
-            <div>{secondHalf.map(item => <li>{item}</li>)}</div>
+            <div>{firstHalf.map((item, idx) => <li key={idx}>{item}</li>)}</div>
+            <div>{secondHalf.map((item, idx) => <li key={idx}>{item}</li>)}</div>
           </Col>
           <Col xs={12} md={4} lg={3} className="footer-sections my-info">
             <li>

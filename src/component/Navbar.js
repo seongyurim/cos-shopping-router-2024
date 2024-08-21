@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { authenricateAction } from '../redux/actions/authenticateAction';
+import { authenticateActions } from '../redux/reducers/authenticateSlice';
 
 const Navbar = () => {
   const menuList = [
@@ -33,7 +33,7 @@ const Navbar = () => {
       navigate('/login');
     }
     else {
-      dispatch(authenricateAction.logout(authenticate));
+      dispatch(authenticateActions.logoutSuccess(authenticate)); // new
       alert("로그아웃되었습니다.");
       navigate('/');      
     }
@@ -80,7 +80,7 @@ const Navbar = () => {
           onClick={() => setWidth(0)}></div>
         <div className="side-menu" style={{width: width}}>
           <button className='side-close' onClick={() => setWidth(0)}>&times;</button>
-          <div className="side-menu-list">{menuList.map(menu => <div onClick={(event) => getCategory(event)}>{menu}</div>)}</div>
+          <div className="side-menu-list">{menuList.map((menu, idx) => <div key={idx} onClick={(event) => getCategory(event)}>{menu}</div>)}</div>
         </div>
 
         <div className="navi-top">
@@ -99,7 +99,7 @@ const Navbar = () => {
               <img className="logo-small" src="https://cdn.freelogovectors.net/wp-content/uploads/2023/12/cos-logo-freelogovectors.net_.png" alt="COS Logo" />
               </Link>
             </li>
-            {menuList.map(menu => <li onClick={(event) => getCategory(event)}>{menu}</li>)}
+            {menuList.map((menu, idx) => <li key={idx} onClick={(event) => getCategory(event)}>{menu}</li>)}
           </ul>
           <div className="navi-btm-right">
             <div className="search-bar">

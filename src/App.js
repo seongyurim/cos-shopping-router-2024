@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { Routes, Route } from  "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -10,12 +8,6 @@ import PrivateRoute from './route/PrivateRoute';
 import ScrollToTopButton from './component/ScrollToTopButton';
 
 function App() {
-  const { authenticate } = useSelector(state => state.auth);
-
-  useEffect(() => {
-    console.log("setAuthenticate: " + authenticate);
-  }, [authenticate]);
-
   return (
     <div>
       <Navbar />
