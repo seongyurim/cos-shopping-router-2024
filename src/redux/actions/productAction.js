@@ -1,6 +1,6 @@
 function getProducts(searchQuery, categoryQuery) {
   return async (dispatch) => {
-    dispatch({type:"GET_PRODUCT_REQUEST"}); // 로딩 시작
+    dispatch({type:"GET_PRODUCT_LIST_REQUEST"}); // 로딩 시작
 
     try {
       let url = `https://my-json-server.typicode.com/seongyurim/cos-shopping-router-2024/products?q=${searchQuery}&category=${categoryQuery}`;
@@ -19,15 +19,15 @@ function getProducts(searchQuery, categoryQuery) {
         );
       }
 
-      dispatch({type:"GET_PRODUCT_SUCCESS", payload:{data}}); // 성공
+      dispatch({type:"GET_PRODUCT_LIST_SUCCESS", payload:{data}}); // 성공
     }
     catch (error) {
-      dispatch({type:"GET_PRODUCT_FAILURE", payload:{error:error.message}}); // 실패
+      dispatch({type:"GET_PRODUCT_LIST_FAILURE", payload:{error:error.message}}); // 실패
     }
   };
 };
 
-const filterProducts = (data, category) => {
+function filterProducts(data, category) {
   switch (category) {
     case "여성 신상품":
       return data.filter(product => product.gender == true &&
@@ -63,4 +63,25 @@ const filterProducts = (data, category) => {
   }
 };
 
-export const productAction = { getProducts };
+function getProductDetail(id) {
+  return async (dispatch) => {
+    dispatch({type:"GET_SINGLE_PRODUCT_REQUEST"}); // 로딩 시작
+
+    try {
+      let url = `https://my-json-server.typicode.com/seongyurim/cos-shopping-router-2024/products/${id}`;
+      let response = await fetch(url);
+
+      if(!response.ok) {
+        throw new Error("제품을 불러오는 중에 오류가 발생했습니다.");
+      }
+
+      let data = await response.json();
+      dispatch({type:"GET_SINGLE_PRODUCT_SUCCESS", payload:{data}}); // 성공
+    }
+    catch (error) {
+      dispatch({type:"GET_SINGLE_PRODUCT_FAILURE", payload:{error:error.message}}); // 실패
+    }    
+  };
+};
+
+export const productAction = { getProducts, getProductDetail };

@@ -70,7 +70,7 @@ button {
 .home-intro {
   display: flex;
   justify-content: center;
-  margin: 7rem 0;
+  margin: 6rem 0 7rem 0;
   font-size: 1.6rem;
 }
 
@@ -99,6 +99,7 @@ button {
 .promotion-img {
   width: 100%;
   transition: all 300ms ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .promotion-title {
@@ -614,7 +615,7 @@ button {
 }
 
 .cart-icon {
-  margin-left: 3px;
+  margin-left: 5px;
 }
 
 .card-desc,

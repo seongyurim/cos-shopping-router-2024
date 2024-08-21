@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Alert } from "react-bootstrap";
-import ProductCard from '../component/ProductCard';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import Footer from '../component/Footer';
-import ClipLoader from "react-spinners/ClipLoader";
-import Promotion from '../component/Promotion';
-import { productAction } from "../redux/actions/productAction";
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { Container, Row, Col, Alert } from "react-bootstrap";
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import LoadingSpinner from '../component/LoadingSpinner';
+import ProductCard from '../component/ProductCard';
+import Promotion from '../component/Promotion';
+import Footer from '../component/Footer';
+import { productAction } from "../redux/actions/productAction";
 
 const Home = () => {
-  const { productList, loading, error } = useSelector(state => state.product);
+  const { productList, listLoading, listError } = useSelector(state => state.product);
   const [query, setQuery] = useSearchParams();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,16 +25,13 @@ const Home = () => {
 
   return (
     <div>
-      {loading ? (
-        <Container className="home-container loading-spinner-area">
-          <ClipLoader color="#888" loading={loading} size={50} className="loading-spinner"/>
-          <div className="loading-spinner-txt">잠시만 기다려주세요</div>
-        </Container>
+      {listLoading ? (
+        <LoadingSpinner listLoading={listLoading} />
       ) : (
         <div>
           <Container className="home-container">
-            {error ? (
-              <Alert variant="danger" className="error-msg">{error}</Alert>
+            {listError ? (
+              <Alert variant="danger" className="error-msg">{listError}</Alert>
             ) : (
               <div>
                 {showPromotion && (
