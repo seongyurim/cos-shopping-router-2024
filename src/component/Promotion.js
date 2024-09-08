@@ -22,7 +22,7 @@ const Promotion = () => {
               <div className="promotion-title" onClick={(event) => showPromotion(event)}>여성 신상품</div>
               <img
                 className="promotion-img"
-                src="https://syr-cos.netlify.app/promotion-women.png"
+                src="https://syr-cos.netlify.app/promotion-women.jpg"
                 alt="Women Promotion"
               />
               <div className="promotion-overlay"></div>
@@ -33,7 +33,7 @@ const Promotion = () => {
               <div className="promotion-title" onClick={(event) => showPromotion(event)}>남성 신상품</div>
               <img
                 className="promotion-img"
-                src="https://syr-cos.netlify.app/promotion-men.png"
+                src="https://syr-cos.netlify.app/promotion-men.jpg"
                 alt="Men Promotion"
               />
               <div className="promotion-overlay"></div>

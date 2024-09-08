@@ -22,6 +22,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.14.1",
     "redux-thunk": "^3.1.0",
+    "shopping-router": "file:",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -48,6 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://seongyurim.github.io/cos-shopping-router-2024"
+  }
 }

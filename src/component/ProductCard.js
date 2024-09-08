@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-
 const ProductCard = ({item}) => {
   
   const [isHovered, setIsHovered] = useState(false);

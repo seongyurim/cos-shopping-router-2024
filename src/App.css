@@ -92,6 +92,7 @@ button {
 }
 
 .promotion-img-area {
+  max-height: 600px;
   position: relative;
   overflow: hidden;
 }
@@ -724,7 +725,7 @@ button {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
+  transition: all .4s ease-in-out;
   pointer-events: none;
   z-index: 99999;
 }
