@@ -92,7 +92,6 @@ button {
 }
 
 .promotion-img-area {
-  max-height: 600px;
   position: relative;
   overflow: hidden;
 }
