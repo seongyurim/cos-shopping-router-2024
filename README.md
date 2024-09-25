@@ -177,6 +177,6 @@ const store = configureStore({
 json-server --watch db.json --port 4000
 ```
 - 홈페이지에서 보여줄 데이터들을 어디에 저장하고 불러올 것인지 정해야 합니다.
-- 개인 프로젝트용, 즉 소규모 데이터를 저장하기 편리한 Json Server에 데이터를 저장하기로 합니다.
+- 개인 프로젝트용, 즉 소규모 데이터를 저장하기 편리한 [Json Server](https://www.npmjs.com/package/json-server/v/0.17.0)에 데이터를 저장하기로 합니다.
 - 프로젝트의 루트 디렉토리에 `db.json`을 생성하여 데이터를 json 형식으로 입력합니다.
 - 기존 포트번호와 겹치지 않는 넘버(ex: 4000)를 지정하여 서버를 동작시킬 수 있습니다.
