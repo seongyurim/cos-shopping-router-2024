@@ -6,11 +6,16 @@
 
 ## 📍개발기간
 2024.07.22 ~ 08.05 (2주)
+['React', 'Redux', 'Redux-Thunk', 'Router', 'Json Server', 'CSS', 'Bootstrap', 'API Call']
 
 ## 📍기술스택
 <div>
 	<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 	<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white">
+	<img src="https://img.shields.io/badge/Redux Thunk-764ABC?style=for-the-badge&logo=redux&logoColor=white">
+	<img src="https://img.shields.io/badge/React Router-764ABC?style=for-the-badge&logo=reactrouter&logoColor=white">
+	<img src="https://img.shields.io/badge/Json Server-764ABC?style=for-the-badge&logo=json&logoColor=white">
+	<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
 	<img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
 	<img src="https://img.shields.io/badge/API Call-E3695F?style=for-the-badge&logoColor=white"> 
 </div>
