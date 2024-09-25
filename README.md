@@ -90,7 +90,7 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 
 ## 📍코드 구조 개선
 ### 1) 비동기 작업 개선
-#### 1-1) Redux-Thunk
+#### 1-1) [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
 ![Redux-Thunk](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZY8UA%2FbtsI6Q8nduy%2F5X7e0sSp2WKkKIljwXbweK%2Fimg.jpg)
 - Redux와 함께 사용되는 미들웨어 라이브러리의 일종으로, 비동기 작업을 처리할 수 있도록 도와줍니다.
 - 액션 생성자가 함수를 반환할 수 있게 해주며, 이 함수는 비동기 작업을 수행한 후 상태를 업데이트할 수 있습니다.
