@@ -95,7 +95,7 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 - 이렇게 Redux-Thunk를 활용하면 비동기 작업을 간편하게 관리하고 애플리케이션의 상태를 일관되게 유지할 수 있습니다.
 
 #### 1-2) createAsyncThunk
-- Redux-Thunk 코드 역시 조금 더욱 깔끔하게 정리할 수 있도록 도와주는 리덕스 툴킷의 함수입니다.
+- Redux-Thunk 코드 역시 더욱 깔끔하게 정리할 수 있도록 도와주는 리덕스 툴킷의 함수입니다.
 - API를 호출할 때 반드시 필요한 pending(요청), fulfilled(성공), rejected(실패) 케이스를 제공합니다.
 - 또한 기존에 분리되어 있던 action, reducer 파일을 slice로 결합하여 관리하도록 하는 공식을 제안합니다.
 - `createSlice`에 정의된 리듀서는 두 가지 케이스로 구분할 수 있습니다.
