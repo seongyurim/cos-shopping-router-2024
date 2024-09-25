@@ -29,7 +29,7 @@ dispatch(fetchProducts({ searchQuery, categoryQuery }));
 ```
 - 홈페이지가 로드되면 로딩스피너가 나타났다가 서버에 저장된 모든 제품 데이터가 렌더링됩니다.
 - 검색어(`searchQuery`)가 있거나 카테고리를 선택한 경우(`categoryQuery`)는 URL에 쿼리가 추가되어 특정 제품만을 렌더링합니다.
-- **`useSerarchParams`**: URL의 쿼리 파라미터값을 가져오는 리액트 훅입니다. 이를 사용해 위의 쿼리값들을 알아낼 수 있습니다.
+- **`useSearchParams`**: URL의 쿼리 파라미터값을 가져오는 리액트 훅입니다. 이를 통해 위의 쿼리값들을 알아냅니다.
 - 검색어나 카테고리를 지정하지 않은 경우는 홈페이지 상단에 프로모션 배너가 나타납니다.
 
 #### 1-2) Detail
@@ -43,3 +43,20 @@ dispatch(fetchSingleProduct(id));
 - 색상과 사이즈를 선택해야 장바구니 담기 버튼이 활성화됩니다.
 
 #### 1-3) Login
+```
+dispatch(authenticateActions.loginSuccess({id, password}));
+```
+- 사용자가 아이디와 비밀번호를 입력하면 이는 지역 상태로 저장되었다가 디스패치됩니다.
+- 그리고 리듀서를 통해 `authenticate`값이 true로 변경되어 로그인되어 있는 상태로 변합니다.
+- 상품 상세정보를 확인하기 전에 거쳐야 하는 페이지입니다.
+
+#### 1-4) PrivateRoute
+```
+return authenticate == true ? <Detail /> : <Navigate to="/login" />;
+```
+- 페이지를 보호하기 위한 리다이렉션 컴포넌트입니다.
+- 현재 앱에서 구현하기 위해 '사용자는 로그인하지 않으면 상세페이지를 확인할 수 없다'는 로직을 설정하였습니다.
+- 이는 로그인한 회원만 회원정보를 수정하는 페이지로 이동할 수 있는 것과 같습니다.
+- 인증 슬라이스에 있는 `authenticate`가 `false`이면 로그인 페이지로 유도합니다.
+- 반면 `authenticate`가 `true`이면 상세페이지에 정상적으로 접근할 수 있습니다.
+- 리다이렉트를 도와주는 컴포넌트 `Navigate`를 함께 사용하여 라우팅 시스템을 구현합니다.
