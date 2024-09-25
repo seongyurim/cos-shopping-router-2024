@@ -102,10 +102,10 @@ export default combineReducers({
 ```
 - 현재 프로젝트처럼 리듀서를 컨셉 별로 구별하여 여러개의 파일을 구성했을 때 필요한 유틸리티입니다.
 - `store`에 복수의 리듀서를 등록하기 위해 index.js파일을 생성하여 리듀서를 결합합니다.
-- 이렇게 결합한 리듀서를 `store`에 `rootReducer`로 가져와서 적용합니다.
+- 이렇게 결합한 리듀서를 `store`에 `rootReducer`로 수입해와서 적용합니다.
 - 앞으로 `useSelector`를 통해 상태를 가져올 때에는 이때 정의한 리듀서의 key를 사용해야 합니다.
  
-### 2) createSlice
+### 3) createSlice
 ```
 const productSlice = createSlice({
   name:"product",
@@ -124,9 +124,9 @@ const productSlice = createSlice({
 - createSlice는 아래와 같은 세개의 values가 필요합니다.
 	- `name`: slice에 대한 이름으로, 유니크한 액션명을 만드는데 name의 value가 prefix로 사용됩니다.
 	- `initialState`: 처음에 정의해두었던 객체를 그대로 사용합니다.
-	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state를 생략할 수 있습니다.
+	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state 구문을 생략할 수 있습니다.
  - 
-### 3) configureStore
+### 4) configureStore
 ```
 const store = configureStore({
   reducer:{
@@ -140,6 +140,12 @@ const store = configureStore({
 - 하지만 configureStore는 이 네 가지 요소를 모두 포함하기 때문에 기존 코드를 대체할 수 있습니다.
 - 기존에 combineReducer를 별도의 파일로 생성했던 것도 삭제하여 코드를 간소화할 수 있게 됩니다.
 
-### 4) createAsyncThunk
+### 5) createAsyncThunk
+- Redux-Thunk 코드 역시 조금 더욱 깔끔하게 정리할 수 있도록 도와주는 리덕스 툴킷의 함수입니다.
+- API를 호출할 때 반드시 필요한 pending(요청), fulfilled(성공), rejected(실패) 케이스를 제공합니다.
+- 또한 기존에 분리되어 있던 action, reducer 파일을 slice로 결합하여 관리하도록 하는 공식을 제안합니다.
+- `createSlice`에 정의된 리듀서는 두 가지 케이스로 구분할 수 있습니다.
+	- `reducers`: 내부에서 dispatch되는 액션을 처리합니다.
+ 	- `extraReducers`: 외부(예: createAsyncThunk)에서 발생하는 비동기 액션을 처리합니다.
 
 ## 📍Json Server
