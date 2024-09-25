@@ -83,8 +83,9 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 - 카드 내용으로는 사진, 제품명, 색상 및 사이즈 개수가 있습니다.
 
 
-## 📍비동기 작업 개선
-### 1) Redux-Thunk
+## 📍코드 구조 개선
+### 1) 비동기 작업 개선
+#### 1-2) Redux-Thunk
 ![Redux-Thunk](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZY8UA%2FbtsI6Q8nduy%2F5X7e0sSp2WKkKIljwXbweK%2Fimg.jpg)
 - Redux와 함께 사용되는 미들웨어 라이브러리의 일종으로, 비동기 작업을 처리할 수 있도록 도와줍니다.
 - 액션 생성자가 함수를 반환할 수 있게 해주며, 이 함수는 비동기 작업을 수행한 후 상태를 업데이트할 수 있습니다.
@@ -93,7 +94,16 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 - 기존 코드를 분리했던 위치에는 디스패치 구문만 남습니다.
 - 이렇게 Redux-Thunk를 활용하면 비동기 작업을 간편하게 관리하고 애플리케이션의 상태를 일관되게 유지할 수 있습니다.
 
-### 2) combineReducers
+#### 1-2) createAsyncThunk
+- Redux-Thunk 코드 역시 조금 더욱 깔끔하게 정리할 수 있도록 도와주는 리덕스 툴킷의 함수입니다.
+- API를 호출할 때 반드시 필요한 pending(요청), fulfilled(성공), rejected(실패) 케이스를 제공합니다.
+- 또한 기존에 분리되어 있던 action, reducer 파일을 slice로 결합하여 관리하도록 하는 공식을 제안합니다.
+- `createSlice`에 정의된 리듀서는 두 가지 케이스로 구분할 수 있습니다.
+	- `reducers`: 내부에서 dispatch되는 액션을 처리합니다.
+ 	- `extraReducers`: 외부(ex: createAsyncThunk)에서 발생하는 비동기 액션을 처리합니다.
+
+### 2) 상태 관리 및 스토어 구성
+#### 2-1) combineReducers
 ```
 export default combineReducers({
   auth: authenticateReducer,
@@ -105,7 +115,7 @@ export default combineReducers({
 - 이렇게 결합한 리듀서를 `store`에 `rootReducer`로 수입해와서 적용합니다.
 - 앞으로 `useSelector`를 통해 상태를 가져올 때에는 이때 정의한 리듀서의 key를 사용해야 합니다.
  
-### 3) createSlice
+#### 2-2) createSlice
 ```
 const productSlice = createSlice({
   name:"product",
@@ -126,7 +136,7 @@ const productSlice = createSlice({
 	- `initialState`: 처음에 정의해두었던 객체를 그대로 사용합니다.
 	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state 구문을 생략할 수 있습니다.
 
-### 4) configureStore
+#### 2-3) configureStore
 ```
 const store = configureStore({
   reducer:{
@@ -140,13 +150,7 @@ const store = configureStore({
 - 하지만 configureStore는 이 네 가지 요소를 모두 포함하기 때문에 기존 코드를 대체할 수 있습니다.
 - 기존에 combineReducer를 별도의 파일로 생성했던 것도 삭제하여 코드를 간소화할 수 있게 됩니다.
 
-### 5) createAsyncThunk
-- Redux-Thunk 코드 역시 조금 더욱 깔끔하게 정리할 수 있도록 도와주는 리덕스 툴킷의 함수입니다.
-- API를 호출할 때 반드시 필요한 pending(요청), fulfilled(성공), rejected(실패) 케이스를 제공합니다.
-- 또한 기존에 분리되어 있던 action, reducer 파일을 slice로 결합하여 관리하도록 하는 공식을 제안합니다.
-- `createSlice`에 정의된 리듀서는 두 가지 케이스로 구분할 수 있습니다.
-	- `reducers`: 내부에서 dispatch되는 액션을 처리합니다.
- 	- `extraReducers`: 외부(ex: createAsyncThunk)에서 발생하는 비동기 액션을 처리합니다.
+
 
 ## 📍Json Server
 ```
