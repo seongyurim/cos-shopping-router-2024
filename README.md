@@ -86,7 +86,7 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 ## 📍비동기 작업 개선
 ### 1) Redux-Thunk
 ![Redux-Thunk](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZY8UA%2FbtsI6Q8nduy%2F5X7e0sSp2WKkKIljwXbweK%2Fimg.jpg)
-- Redux Thunk는 Redux와 함께 사용되는 미들웨어 라이브러리의 일종으로, 비동기 작업을 처리할 수 있도록 도와줍니다.
+- Redux와 함께 사용되는 미들웨어 라이브러리의 일종으로, 비동기 작업을 처리할 수 있도록 도와줍니다.
 - 액션 생성자가 함수를 반환할 수 있게 해주며, 이 함수는 비동기 작업을 수행한 후 상태를 업데이트할 수 있습니다.
 - 기존 코드를 redux-thunk 버전으로 바꾸면서 비동기 작업을 redux action 파일 내부로 이동시킵니다.
 - 액션 내부에서 비동기 작업이 이루어진 후에 상태가 업데이트됩니다.
@@ -106,6 +106,11 @@ export default combineReducers({
 - 앞으로 `useSelector`를 통해 상태를 가져올 때에는 이때 정의한 리듀서의 key를 사용해야 합니다.
  
 ### 2) createSlice
+- 리듀서의 복잡한 정의(if or switch문 사용, 유니크한 케이스명 설정 등)를 개선해주는 함수입니다.
+- createSlice는 아래와 같은 세개의 values가 필요합니다.
+	- `name`: slice에 대한 이름으로, 유니크한 액션명을 만드는데 name의 value가 prefix로 사용됩니다.
+	- `initialState`: 처음에 정의해두었던 객체를 그대로 사용합니다.
+	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state를 생략할 수 있습니다.
 ### 3) configureStore
 ### 4) createAsyncThunk
 
