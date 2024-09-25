@@ -125,7 +125,7 @@ const productSlice = createSlice({
 	- `name`: slice에 대한 이름으로, 유니크한 액션명을 만드는데 name의 value가 prefix로 사용됩니다.
 	- `initialState`: 처음에 정의해두었던 객체를 그대로 사용합니다.
 	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state 구문을 생략할 수 있습니다.
- - 
+
 ### 4) configureStore
 ```
 const store = configureStore({
@@ -146,6 +146,28 @@ const store = configureStore({
 - 또한 기존에 분리되어 있던 action, reducer 파일을 slice로 결합하여 관리하도록 하는 공식을 제안합니다.
 - `createSlice`에 정의된 리듀서는 두 가지 케이스로 구분할 수 있습니다.
 	- `reducers`: 내부에서 dispatch되는 액션을 처리합니다.
- 	- `extraReducers`: 외부(예: createAsyncThunk)에서 발생하는 비동기 액션을 처리합니다.
+ 	- `extraReducers`: 외부(ex: createAsyncThunk)에서 발생하는 비동기 액션을 처리합니다.
 
 ## 📍Json Server
+```
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
+```
+```
+json-server --watch db.json --port 4000
+```
+- 홈페이지에서 보여줄 데이터들을 어디에 저장하고 불러올 것인지 정해야 합니다.
+- 개인 프로젝트용, 즉 소규모 데이터를 저장하기 편리한 Json Server에 데이터를 저장하기로 합니다.
+- 프로젝트의 루트 디렉토리에 `db.json`을 생성하여 데이터를 입력합니다.
+- 기존 포트번호와 겹치지 않는 넘버(ex: 4000)를 지정하여 서버를 동작시킬 수 있습니다.
