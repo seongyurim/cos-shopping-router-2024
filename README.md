@@ -21,8 +21,9 @@
 
 ## 📍주요기능
 
-## 📍페이지 컴포넌트별 상세기능
-### 1) Home
+## 📍상세기능
+### 1) 페이지 컴포넌트
+#### 1-1) Home
 ```
 dispatch(fetchProducts({ searchQuery, categoryQuery }));
 ```
@@ -31,7 +32,7 @@ dispatch(fetchProducts({ searchQuery, categoryQuery }));
 - 검색어(`searchQuery`)가 있거나 카테고리를 선택했을 경우(`categoryQuery`)는 URL에 쿼리가 추가되어 특정 제품만을 렌더링합니다.
 - 검색어나 카테고리를 지정하지 않은 경우는 홈페이지 상단에 프로모션 배너를 보여줍니다.
 
-### 2) Detail
+#### 1-2) Detail
 ```
 dispatch(fetchSingleProduct(id));
 ```
@@ -41,4 +42,4 @@ dispatch(fetchSingleProduct(id));
 - 그전에 로그인되지 않았다면 `PrivateRoute`로 인해 로그인 페이지로 이동합니다.
 - 색상과 사이즈를 선택해야 장바구니 담기 버튼이 활성화됩니다.
 
-### 3) Login
+#### 1-3) Login
