@@ -85,7 +85,12 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 
 ## 📍비동기 작업 개선
 ### 1) Redux-Thunk
+![Redux-Thunk](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZY8UA%2FbtsI6Q8nduy%2F5X7e0sSp2WKkKIljwXbweK%2Fimg.jpg)
 - Redux Thunk는 Redux와 함께 사용되는 미들웨어 라이브러리의 일종으로, 비동기 작업을 처리할 수 있도록 도와줍니다.
+- 액션 생성자가 함수를 반환할 수 있게 해주며, 이 함수는 비동기 작업을 수행한 후 상태를 업데이트할 수 있습니다.
+- 기존 코드를 redux-thunk 버전으로 바꾸면서 비동기 작업을 redux action 파일 내에 위치시키도록 합니다.
+- 액션 내부에서 비동기 작업이 이루어진 후에 상태가 업데이트됩니다.
+- 이렇게 Redux-Thunk를 활용하면 비동기 작업을 간편하게 관리하고 애플리케이션의 상태를 일관되게 유지할 수 있습니다.
 
 ### 2) createSlice
 ### 3) configureStore
