@@ -11,7 +11,7 @@
 <div>
 	<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 	<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white">
-	<img src="https://img.shields.io/badge/Redux Thunk-764ABC?style=for-the-badge&logo=redux&logoColor=white">
+	<img src="https://img.shields.io/badge/Redux Thunk-76B83F?style=for-the-badge&logo=redux&logoColor=white">
 	<img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white">
 	<img src="https://img.shields.io/badge/Json Server-000000?style=for-the-badge&logo=json&logoColor=white">
 	<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
