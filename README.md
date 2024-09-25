@@ -83,6 +83,12 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 - 카드 내용으로는 사진, 제품명, 색상 및 사이즈 개수가 있습니다.
 
 
-## 📍Redux-Thunk
+## 📍비동기 작업 개선
+### 1) Redux-Thunk
+- Redux Thunk는 Redux와 함께 사용되는 미들웨어 라이브러리의 일종으로, 비동기 작업을 처리할 수 있도록 도와줍니다.
+
+### 2) createSlice
+### 3) configureStore
+### 4) createAsyncThunk
 
 ## 📍Json Server
