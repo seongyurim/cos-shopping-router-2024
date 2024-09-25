@@ -106,12 +106,40 @@ export default combineReducers({
 - 앞으로 `useSelector`를 통해 상태를 가져올 때에는 이때 정의한 리듀서의 key를 사용해야 합니다.
  
 ### 2) createSlice
+```
+const productSlice = createSlice({
+  name:"product",
+  initialState,
+  reducers:{
+    getAllProducts(state, action) {
+      state.productList = action.payload.data;
+    },
+    getSingleProduct(state, action) {
+      state.selectedItem = action.payload.data;
+    }
+  }
+});
+```
 - 리듀서의 복잡한 정의(if or switch문 사용, 유니크한 케이스명 설정 등)를 개선해주는 함수입니다.
 - createSlice는 아래와 같은 세개의 values가 필요합니다.
 	- `name`: slice에 대한 이름으로, 유니크한 액션명을 만드는데 name의 value가 prefix로 사용됩니다.
 	- `initialState`: 처음에 정의해두었던 객체를 그대로 사용합니다.
 	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state를 생략할 수 있습니다.
+ - 
 ### 3) configureStore
+```
+const store = configureStore({
+  reducer:{
+    auth: authenticateSlice,
+    product: productSlice
+  }
+})
+```
+- 리덕스 버전이 업그레이드됨에 따라 더이상 createStore를 지원하지 않게 되면서 대안으로 나타난 함수입니다.
+- 올드 리덕스에서는 네 가지 요소(`combineReducer`, `thunk`, `applyMiddleware`, `composedWithDevTools`)를 store에 반드시 수입해와서 구성해야 했습니다.
+- 하지만 configureStore는 이 네 가지 요소를 모두 포함하기 때문에 기존 코드를 대체할 수 있습니다.
+- 기존에 combineReducer를 별도의 파일로 생성했던 것도 삭제하여 코드를 간소화할 수 있게 됩니다.
+
 ### 4) createAsyncThunk
 
 ## 📍Json Server
