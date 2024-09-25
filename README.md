@@ -99,7 +99,7 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 - 기존 코드를 분리했던 위치에는 디스패치 구문만 남습니다.
 - 이렇게 Redux-Thunk를 활용하면 비동기 작업을 간편하게 관리하고 애플리케이션의 상태를 일관되게 유지할 수 있습니다.
 
-#### 1-2) createAsyncThunk
+#### 1-2) [createAsyncThunk](https://redux-toolkit.js.org/api/createAsyncThunk)
 - Redux-Thunk 코드 역시 더욱 깔끔하게 정리할 수 있도록 도와주는 리덕스 툴킷의 함수입니다.
 - API를 호출할 때 반드시 필요한 pending(요청), fulfilled(성공), rejected(실패) 케이스를 제공합니다.
 - 또한 기존에 분리되어 있던 action, reducer 파일을 slice로 결합하여 관리하도록 하는 공식을 제안합니다.
@@ -108,7 +108,7 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
  	- `extraReducers`: 외부(ex: createAsyncThunk)에서 발생하는 비동기 액션을 처리합니다.
 
 ### 2) 상태 관리 및 스토어 구성
-#### 2-1) combineReducers
+#### 2-1) [combineReducers](https://lunit.gitbook.io/redux-in-korean/recipes/structuringreducers/usingcombinereducers)
 ```
 export default combineReducers({
   auth: authenticateReducer,
@@ -120,7 +120,7 @@ export default combineReducers({
 - 이렇게 결합한 리듀서를 `store`에 `rootReducer`로 수입해와서 적용합니다.
 - 앞으로 `useSelector`를 통해 상태를 가져올 때에는 이때 정의한 리듀서의 key를 사용해야 합니다.
  
-#### 2-2) createSlice
+#### 2-2) [createSlice](https://redux-toolkit.js.org/api/createSlice)
 ```
 const productSlice = createSlice({
   name:"product",
@@ -141,7 +141,7 @@ const productSlice = createSlice({
 	- `initialState`: 처음에 정의해두었던 객체를 그대로 사용합니다.
 	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state 구문을 생략할 수 있습니다.
 
-#### 2-3) configureStore
+#### 2-3) [configureStore](https://redux-toolkit.js.org/api/configureStore)
 ```
 const store = configureStore({
   reducer:{
