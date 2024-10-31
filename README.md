@@ -19,6 +19,9 @@
 	<img src="https://img.shields.io/badge/API Call-E3695F?style=for-the-badge&logoColor=white"> 
 </div>
 
+## 📍데모 페이지
+<img width="1479" alt="Cos Demo" src="https://files.cdn.thinkific.com/file_uploads/523761/images/d66/ae4/e62/1712033044782.png">
+
 ## 📍주요기능
 - **리덕스 기반 상태관리**: 리덕스 툴킷을 이용해 더욱 효율적으로 상태를 관리합니다.
 - **컴포넌트 세분화**: 구조를 페이지별 및 기능별로 구분하여 독립적인 컴포넌트로 구성합니다.
