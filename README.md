@@ -32,7 +32,7 @@
 ## 📍상세기능
 ### 1) 페이지 컴포넌트
 #### 1-1) Home
-```
+```javascript
 dispatch(fetchProducts({ searchQuery, categoryQuery }));
 ```
 - 홈페이지가 로드되면 로딩스피너가 나타났다가 서버에 저장된 모든 제품 데이터가 렌더링됩니다.
@@ -41,7 +41,7 @@ dispatch(fetchProducts({ searchQuery, categoryQuery }));
 - 검색어나 카테고리를 지정하지 않은 경우는 홈페이지 상단에 프로모션 배너가 나타납니다.
 
 #### 1-2) Detail
-```
+```javascript
 dispatch(fetchSingleProduct(id));
 ```
 - 사용자가 선택한 제품의 id값을 `useParams`로 읽어와 디스패치합니다.
@@ -51,7 +51,7 @@ dispatch(fetchSingleProduct(id));
 - 색상과 사이즈를 선택해야 장바구니 담기 버튼이 활성화됩니다.
 
 #### 1-3) Login
-```
+```javascript
 dispatch(authenticateActions.loginSuccess({id, password}));
 ```
 - 사용자가 아이디와 비밀번호를 입력하면 이는 지역 상태로 저장되었다가 디스패치됩니다.
@@ -59,7 +59,7 @@ dispatch(authenticateActions.loginSuccess({id, password}));
 - 상품 상세정보를 확인하기 전에 거쳐야 하는 페이지입니다.
 
 #### 1-4) PrivateRoute
-```
+```javascript
 return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 ```
 - 페이지를 보호하기 위한 리다이렉션 컴포넌트입니다.
@@ -112,19 +112,19 @@ return authenticate == true ? <Detail /> : <Navigate to="/login" />;
 
 ### 2) 상태 관리 및 스토어 구성
 #### 2-1) [combineReducers](https://lunit.gitbook.io/redux-in-korean/recipes/structuringreducers/usingcombinereducers)
-```
+```javascript
 export default combineReducers({
   auth: authenticateReducer,
   product: productReducer
 });
 ```
-- 현재 프로젝트처럼 리듀서를 컨셉 별로 구별하여 여러개의 파일을 구성했을 때 필요한 유틸리티입니다.
+- 현재 프로젝트처럼 리듀서를 컨셉 별로 구별하여 여러개의 파일을 구성할 때 필요한 유틸리티입니다.
 - `store`에 복수의 리듀서를 등록하기 위해 index.js파일을 생성하여 리듀서를 결합합니다.
 - 이렇게 결합한 리듀서를 `store`에 `rootReducer`로 수입해와서 적용합니다.
 - 앞으로 `useSelector`를 통해 상태를 가져올 때에는 이때 정의한 리듀서의 key를 사용해야 합니다.
  
 #### 2-2) [createSlice](https://redux-toolkit.js.org/api/createSlice)
-```
+```javascript
 const productSlice = createSlice({
   name:"product",
   initialState,
@@ -145,7 +145,7 @@ const productSlice = createSlice({
 	- `reducers`: 기존 로직을 함수로 재구성합니다. 이제는 번거로운 return문과 ..state 구문을 생략할 수 있습니다.
 
 #### 2-3) [configureStore](https://redux-toolkit.js.org/api/configureStore)
-```
+```javascript
 const store = configureStore({
   reducer:{
     auth: authenticateSlice,
@@ -161,7 +161,7 @@ const store = configureStore({
 
 
 ## 📍Json Server
-```
+```json
 {
   "posts": [
     { "id": "1", "title": "a title", "views": 100 },
