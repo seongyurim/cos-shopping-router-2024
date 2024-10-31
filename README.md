@@ -20,7 +20,7 @@
 </div>
 
 ## 📍데모 페이지
-<img width="1479" alt="Cos Demo" src="https://github.com/user-attachments/assets/cf35e2e2-5312-4f38-b515-e7e6a7607d65">
+<img width="1479" alt="Cos Demo" src="https://files.cdn.thinkific.com/file_uploads/523761/images/d66/ae4/e62/1712033044782.png">
 
 ## 📍주요기능
 - **리덕스 기반 상태관리**: 리덕스 툴킷을 이용해 더욱 효율적으로 상태를 관리합니다.
